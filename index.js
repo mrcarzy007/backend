@@ -1,4 +1,3 @@
-const path = require("path");
 const express = require("express");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
@@ -45,11 +44,6 @@ app.post("/api/contact", (req, res) => {
       console.log("Message Send");
     }
   });
-});
-app.use(express.static(path.join(__dirname, "../Aditya/dist")));
-
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../Aditya/dist/index.html"));
 });
 
 app.listen(PORT, () => {
